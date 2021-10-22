@@ -13,11 +13,11 @@ export class AuthenticateController {
         password,
       });
 
-      return res.status(200).send({ jwt });
+      return res.status(200).send({ error: null, payload: jwt });
     } catch (err) {
       return res.status(400).send({
         error: err?.message ?? "Unknown error",
-        payload: "",
+        payload: null,
       });
     }
   }
